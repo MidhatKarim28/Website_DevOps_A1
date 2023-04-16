@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Projects</title>
+  <style>
+    /* Add your custom CSS styles here */
+  </style>
+  <script>
+    function filterProjects() {
+      // Get the input value
+      var input = document.getElementById("filter-projects").value.toLowerCase();
+      // Get the list of projects
+      var projects = document.getElementById("project-list").getElementsByTagName("li");
+      // Loop through each project and hide or show it based on the input value
+      for (var i = 0; i < projects.length; i++) {
+        var project = projects[i];
+        var technology = project.innerHTML.toLowerCase();
+        if (technology.indexOf(input) > -1) {
+          project.style.display = "";
+        } else {
+          project.style.display = "none";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <a href="../index.html">Home</a>
+    </header>
+  <h2>Projects</h2>
+  <div>
+    <label for="filter-projects">Filter by technology:</label>
+    <input type="text" id="filter-projects" onkeyup="filterProjects()" placeholder="Enter technology">
+  </div>
+  <ul id="project-list">
+    <li><strong>Project 1</strong> - C#</li>
+    <li><strong>Project 2</strong> - Java</li>
+    <li><strong>Project 3</strong> - Node.js</li>
+    <li><strong>Project 4</strong> - C#</li>
+    <li><strong>Project 5</strong> - Python</li>
+    <li><strong>Project 6</strong> - Java</li>
+  </ul>
+</body>
+</html>
